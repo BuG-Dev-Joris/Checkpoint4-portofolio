@@ -4,7 +4,7 @@ import AutoReparNotices from "../images/repar/ReparNotices.jpg";
  
 export default function CvDisplay() {
     return (
-        <div>
+        <div className="md:mt-28">
             <h1>CV</h1>
             <img alt="CVVisualisation" src={AutoReparNotices}></img>
         </div>

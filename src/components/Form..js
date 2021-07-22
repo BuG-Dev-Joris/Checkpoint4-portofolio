@@ -18,13 +18,12 @@ export default function Form() {
 
     axios({
       method: 'post',
-      url: '/api/contact',
+      url: 'http://localhost:5000/Contact',
       data: {
         contactUserName: data.contactUserName,
         contactContent: data.contactContent,
         contactEmail: data.contactEmail,
-        contactImmat: data.contactImmat,
-        contactBrandModel: data.contactBrandModel,
+        contactFirmName: data.contactFirmName,
       },
     })
       .then((reponse) => {
@@ -50,15 +49,13 @@ export default function Form() {
 
   return (
     <div
-      className="flex flex-col md:mt-28 sm:mt-0 justify-center "
+      className="flex flex-col md:mt-28 sm:mt-0 justify-center"
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg transform hover:shadow-2xl transition duration-400">
           <div className="bg-white flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
             <h2 className="flex justify-center align-center text-gray-800 text-xl font-semibold py-2">
-              N'hésitez pas à nous contacter !
-              <br />
-              06-34-37-24-42
+              Contactez moi par mail :
             </h2>
           </div>
           <div className="bg-gray-200 flex flex-col items-center">
@@ -79,16 +76,16 @@ export default function Form() {
               />
               {errors.contactUserName && <p>Nom et prénom requis</p>}
               <input
-                {...register('contactBrandModel', {
+                {...register('contactFirmName', {
                   required: true,
                   minLength: { value: 2 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
-                name="contactBrandModel"
-                placeholder="Marque et modèle"
+                name="contactFirmName"
+                placeholder="Entreprise"
                 type="text"
               />
-              {errors.contactBrandModel && <p>Marque et modèle requis</p>}
+              {errors.contactBrandModel && <p>Nom de l'entreprise requis</p>}
               <input
                 {...register('contactEmail', {
                   required: true,
@@ -100,39 +97,17 @@ export default function Form() {
                 name="contactEmail"
               />
               {errors.contactEmail && <p>Email requis</p>}
-              <input
-                {...register('contactImmat', {
-                  required: true,
-                  minLength: { value: 3 },
-                })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
-                placeholder="Immatriculation"
-                type="text"
-                name="contactImmat"
-              />
-              {errors.contactImmat && <p>Immatriculation requise</p>}
               <textarea
                 {...register('contactContent', {
                   required: true,
                   minLength: { value: 1 },
                 })}
                 className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
-                placeholder="Laissez nous un message"
+                placeholder="Message"
                 name="contactContent"
                 type="text"
               />
               {errors.contactContent && <p>Message requis</p>}
-
-              {/*
-                    <input
-                      {...register('ContactPhotos', {
-                  name: 'ContactPhotos',
-                })}
-                      type="file"
-                      // onChange={handleFiles}
-                      className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-                    />
-                    */}
 
               <button
                 type="submit"
