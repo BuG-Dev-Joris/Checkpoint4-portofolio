@@ -67,29 +67,36 @@ export default function Carousel() {
 
 	return (
 		<>
-			<div className="flex-col">
+			<div className="flex flex-col justify-around">
 				<button
 					value="ReparAuto"
 					selected="selected"
+                    type="button"
+                    className="bg-gray-300"
 					// onClick={setCarouselUrls("ReparAuto")}
 				>
 					ReparAuto
 				</button>
 				<button
 					value="Upizz"
+                    type="button"
+                    className="bg-gray-300"
 					//    onClick={setCarouselUrls("Upizz")}
 				>
 					Upizz
 				</button>
 				<button
 					value="SideProjects"
+                    type="button"
+                    className="bg-gray-300"
 					//    onClick={setCarouselUrls("SideProjects")}
 				>
 					SideProjects
 				</button>
 			</div>
 
-			<div className="container">
+			<div className="container text-center flex-row justify-between m-auto">
+				<h1>Presentation des projets</h1>
 				<CarouselProvider
 					naturalSlideWidth={300}
 					naturalSlideHeight={120}
@@ -98,37 +105,52 @@ export default function Carousel() {
 					lockOnWindowScroll={true}
 					infinite={true}
 				>
-					<Slider>
-						<Slide index={0}>
-							<div>
-								<Image
-									alt="reparHome"
-									src={urls.reparAuto.AutoReparHomeUrl}
-								></Image>
-							</div>
-						</Slide>
-						<Slide index={1}>
-							<div>
-								<Image alt="reparActivities" src={AutoReparActivities}></Image>
-							</div>
-						</Slide>
-						<Slide index={2}>
-							<div>
-								<Image
-									alt="reparAppointments"
-									src={AutoReparAppointments}
-								></Image>
-							</div>
-						</Slide>
-						<Slide index={3}>
-							<div>
-								<Image alt="reparNotices" src={AutoReparNotices}></Image>
-							</div>
-						</Slide>
-					</Slider>
-					<ButtonBack>Back</ButtonBack>
-					<ButtonNext>Next</ButtonNext>
-				</CarouselProvider>
+					<div>
+						<Slider>
+							<Slide index={0}>
+								<div>
+									<Image alt="reparHome" src={AutoReparHome}></Image>
+								</div>
+							</Slide>
+							<Slide index={1}>
+								<div>
+									<Image
+										alt="reparActivities"
+										src={AutoReparActivities}
+									></Image>
+								</div>
+							</Slide>
+							<Slide index={2}>
+								<div>
+									<Image
+										alt="reparAppointments"
+										src={AutoReparAppointments}
+									></Image>
+								</div>
+							</Slide>
+							<Slide index={3}>
+								<div className="rounded-full">
+									<Image alt="reparNotices" src={AutoReparNotices}></Image>
+								</div>
+							</Slide>
+						</Slider>
+					</div>
+					<div className="flex justify-around">
+						<ButtonBack className="bg-gray-300">Back</ButtonBack>
+						<ButtonNext className="bg-gray-300">Next</ButtonNext>
+					</div>
+                </CarouselProvider>
+                <div className="bg-gray-300">
+                <h1>Description du projet</h1>
+				<p>
+					Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+					Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+					Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+					Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+					Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+					Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    </p>
+                    </div>
 			</div>
 		</>
 	);

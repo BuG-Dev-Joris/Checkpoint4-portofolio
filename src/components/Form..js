@@ -136,7 +136,7 @@ export default function Form() {
 
               <button
                 type="submit"
-                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="py-4 mt-2 mb-20 text-lg bg-blue-400 rounded-xl text-gray-100 shadow-lg transform hover:shadow-2xl transition duration-400"
               >
                 Envoyez
               </button>
