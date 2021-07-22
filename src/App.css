@@ -1,15 +1,15 @@
-/*
+
 .App {
 	text-align: center;
-	background-color: #7a9ebf;
 }
-*/
+
 
 /* ************************* GENERALITES *************************  */
 
 :root {
 	--primary-color: #7a9ebf;
 	--header-footer-bg-color: #c4c4c4;
+	--font-color: #0e0b0b;
 	--logo-font: "Caveat", cursive;
 	--main-font: Arial, cursive;
 	--menu-font: "Lobster", cursive;
@@ -50,12 +50,27 @@ main {
 	flex-grow: 1;
 }
 
+.navbar {
+	width: 100%;
+	background-color: var(--header-footer-bg-color);
+	padding: 35px;
+	color: var(--font-color);
+	margin-top: 0;
+	display: flex;
+	justify-content: space-between;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
 .footer {
 	width: 100%;
 	background-color: var(--header-footer-bg-color);
 	padding: 10px;
-	color: var(--primary-color);
+	color: var(--font-color);
+	margin-bottom: 0;
 	bottom: 0;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
 html,
@@ -63,3 +78,9 @@ body,
 #root {
 	min-height: 100vh;
 }
+
+.App-logo {
+	height: 8vmin;
+	pointer-events: none;
+}
+
