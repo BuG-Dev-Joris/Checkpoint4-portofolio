@@ -57,9 +57,10 @@ main {
 	color: var(--font-color);
 	margin-top: 0;
 	display: flex;
-	justify-content: space-between;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	font-weight: 700;
+	font-size: 100%;
 }
 
 .footer {
@@ -84,3 +85,18 @@ body,
 	pointer-events: none;
 }
 
+.title-links {
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	
+}
+
+.links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title {
+	font-size: 300%;
+}
